@@ -1,0 +1,20 @@
+{
+  "name": "Select by Name Figma Plugin",
+  "version": "1.0.0",
+  "description": "Picks layers from current selection based on their name.",
+  "main": "code.js",
+  "scripts": {
+    "bundle": "node ui/bundler/index.js",
+    "build": "rollup --config --bundleConfigAsCjs && npm run bundle",
+    "watch": "npm run build -- --watch"
+  },
+  "author": "HMI Project",
+  "license": "",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.57.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.18.0",
+    "tslib": "^2.5.0",
+    "typescript": "*"
+  }
+}
