@@ -1,0 +1,18 @@
+ul#selection{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+li.selector{
+	line-height: 32px;
+	padding: 0 8px 0 16px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	cursor: default;
+	white-space: nowrap;
+}
+li.selector:hover{
+  background-color: var(--figma-color-bg-hover);
+}
