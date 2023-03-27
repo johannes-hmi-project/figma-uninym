@@ -4,4 +4,45 @@
   color: var(--figma-color-text);
   margin: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+div#main{
+  flex-grow: 1;
+  overflow: auto;
+}
+
+
+
+div.iconButton{
+  width: 16px;
+  height: 16px;
+  padding: 7px; 
+  border-radius: 2px;
+}
+
+div.iconButton:hover{
+  background-color: var(--figma-color-bg-hover);
+}
+
+div.iconButton.on{
+  background-color: var(--figma-color-bg-brand-pressed);
+}
+
+div.iconButton.on:hover{
+  background-color: var(--figma-color-bg-brand-hover);
+
+}
+
+svg.icon{
+  width: 16px;
+  height: 16px;
+  color: var(--figma-color-text);
+}
+
+.on svg.icon{
+  color: white;
 }

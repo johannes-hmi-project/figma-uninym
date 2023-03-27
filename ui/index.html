@@ -1,5 +1,65 @@
 <div id="main">
   <ul id="selection"></ul>
 </div>
+<div id="footer">
+  <div id="settingsButton" class="iconButton">
+    <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="#settingsIcon"></use>
+    </svg>
+  </div>
+</div>
 
+<!-- Dialogs & Popups -->
+<div style="display: none">
+  <div id="settingsPopup" class="popup">
+    <div class="parameter">
+      <input type="checkbox" id="traverseInstances"/>
+      <label for="traverseInstances">
+          <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#checkMark"></use>
+          </svg>
+          <span>Traverse Instances</span>
+          <p>To select layers inside instances, enable the option. The plugin normally avoids collecting layers under instances.</p>
+      </label>
+    </div>
+    <div class="parameter">
+      <input type="checkbox" id="skipVariants"/>
+      <label for="skipVariants">
+          <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#checkMark"></use>
+          </svg>
+          <span>Skip Component Variants</span>
+          <p>Component variants' names are usually unique. Therefore the plugin can skip those.</p>
+      </label>
+    </div>
+    <div class="parameter">
+      <input type="checkbox" id="showUniqueNames"/>
+      <label for="showUniqueNames">
+          <svg class="icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#checkMark"></use>
+          </svg>
+          <span>Show Unique Names</span>
+          <p>As this plugin is primarily meant for selecting layers with identical names, you can omit layers with a unique name completely.</p>
+      </label>
+    </div>
+  </div>
+<div>
 
+<!-- Icons -->
+<svg style="display: none">
+  <defs>
+    <g id="settingsIcon">
+      <g fill="none" stroke="currentColor">
+        <circle cx="4.5" cy="10.5" r="2"/>
+        <circle cx="11.5" cy="5.5" r="2"/>
+        <path d="M4.5 1V8.5M4.5 12.5V15"/>
+        <path d="M11.5 15V7.5M11.5 3.5V1"/>
+      </g>
+    </g>
+    <g id="checkMark">
+      <g fill="none" stroke="currentColor">
+        <path d="M4.75 7.5L7 9.75L11.25 5.5" stroke-width="2"/>
+      </g>
+    </g>
+  </defs>
+</svg>

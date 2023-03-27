@@ -1,0 +1,18 @@
+div#settingsPopup{
+	width: 280px;
+	left: 8px;
+	position: absolute;
+	bottom: 48px;
+}
+
+div#settingsPopup::before{
+	content: "";
+	display: block;
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	transform: rotate(45deg);
+	background-color: var(--figma-color-bg-inverse);
+	bottom: -3px;
+	left: 12px;
+}

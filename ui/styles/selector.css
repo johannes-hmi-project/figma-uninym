@@ -16,3 +16,8 @@ li.selector{
 li.selector:hover{
   background-color: var(--figma-color-bg-hover);
 }
+
+.selector span.count{
+	color: var(--figma-color-text-disabled);
+	margin-left: 4px;
+}

@@ -1,3 +1,6 @@
+import { getSetting } from './settings';
+import { isComponentSetVariant, isInstanceNode } from './tools';
+
 interface LayerInfo {
 	id: string;
 	name: string;
@@ -22,23 +25,35 @@ export const parseSelection = (selection: readonly SceneNode[]):Commons => {
 		output = mergeCommons(output, parseNode(selection[i]));
 	}
 	
+	if(!getSetting('showUniqueNames')){
+		for(let key in output){
+			const cLayers = output[key];
+			
+			if(cLayers.layers.length <= 1){
+				delete output[key];
+			}
+		}
+	}
+	
 	return output;
 }
 
 const parseNode = (node: SceneNode):Commons => {
 	let output = {} as Commons;
 	
-	output[node.name] = {
-		commonName: node.name,
-		types: [node.type],
-		layers: [{
-			id: node.id,
-			name: node.name,
-			type: node.type,
-		}]
+	if(!getSetting('skipVariants') || !isComponentSetVariant(node)){
+		output[node.name] = {
+			commonName: node.name,
+			types: [node.type],
+			layers: [{
+				id: node.id,
+				name: node.name,
+				type: node.type,
+			}]
+		}
 	}
 	
-	if('children' in node){
+	if('children' in node && (getSetting('traverseInstances') || !isInstanceNode(node))){
 		const children = node.children;
 	
 		for(let i = 0; i < children.length; i++){

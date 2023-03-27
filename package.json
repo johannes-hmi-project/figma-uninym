@@ -1,7 +1,7 @@
 {
   "name": "Select by Name Figma Plugin",
   "version": "1.0.0",
-  "description": "Picks layers from current selection based on their name.",
+  "description": "Picks layers with identical names.",
   "main": "code.js",
   "scripts": {
     "bundle": "node ui/bundler/index.js",
