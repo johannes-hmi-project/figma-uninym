@@ -1,4 +1,4 @@
-import { Commons } from './parse'
+import { Commons, layersByID } from './parse'
 
 // Layers im Dokument selektieren.
 export const select = (selection: Commons) => {
@@ -11,9 +11,13 @@ export const select = (selection: Commons) => {
 		for(let i = 0; i < selection[key].layers.length; i++){
 			
 			const layerID = selection[key].layers[i].id;
-			const layer = figma.currentPage.findOne(n => n.id === layerID);
+			//const layer = figma.currentPage.findOne(n => n.id === layerID);
 			
-			newSelection.push(layer);
+			if(layerID in layersByID){
+				const layer = layersByID[layerID];
+			
+				newSelection.push(layer);
+			}
 		}
 	};
 	

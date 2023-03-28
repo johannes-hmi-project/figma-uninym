@@ -17,7 +17,11 @@ export interface Commons {
 	[key: string]: CommonLayers;
 };
 
+export let layersByID = {} as {[key: string]: SceneNode};
+
 export const parseSelection = (selection: readonly SceneNode[]):Commons => {
+	
+	layersByID = {};
 	
 	let output = {} as Commons;
 	
@@ -51,6 +55,8 @@ const parseNode = (node: SceneNode):Commons => {
 				type: node.type,
 			}]
 		}
+		
+		layersByID[node.id] = node;
 	}
 	
 	if('children' in node && (getSetting('traverseInstances') || !isInstanceNode(node))){

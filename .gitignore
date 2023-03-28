@@ -11,3 +11,5 @@ ui.html
 build
 
 *.DS_Store
+
+.nova

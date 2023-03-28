@@ -1,5 +1,5 @@
 {
-  "name": "Select by Name Figma Plugin",
+  "name": "Uninym Figma Plugin",
   "version": "1.0.0",
   "description": "Picks layers with identical names.",
   "main": "code.js",
